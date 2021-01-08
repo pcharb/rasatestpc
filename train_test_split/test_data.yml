@@ -1,0 +1,117 @@
+version: "2.0"
+nlu:
+- intent: chitchat/jesuisunrobot
+  examples: |
+    - C'est quoi ton nom ?
+    - Est ce que vous êtes un robot?
+- intent: chitchat/meteo
+  examples: |
+    - Quelles sont les prévisions pour la semaine prochaine ?
+    - Quelle température fait il aujourd'hui ?
+- intent: chitchat/blague
+  examples: |
+    - Dis moi une blague
+- intent: faq/contact
+  examples: |
+    - Comment avoir plus d'informations
+- intent: faq/autre
+  examples: |
+    - Comment protéger les citoyens
+- intent: explication_divorce_form
+  examples: |
+    - Je veux avoir plus d'informations
+    - Explique moi
+    - Pourquoi c'est nécessaire
+- intent: tribunal
+  examples: |
+    - Comment s'entendre sans avoir recours aux tribunaux ?
+- intent: fonctionnement_de_la_cour
+  examples: |
+    - Comment se déroule l'audience ?
+- intent: avec_ou_sans_avocat_a_la_cour
+  examples: |
+    - Comment on agir seule [sans avocat]{"entity": "avocat", "value": "sans"}?
+    - Entamer [seul]{"entity": "avocat", "value": "sans"} une procédure de divorce
+    - Se préparer pour l'audience
+- intent: procedures_judiciares
+  examples: |
+    - Comment être représenté par un avocat?
+- intent: mediation
+  examples: |
+    - Inviter son ex à aller en médiation
+    - Officialiser les ententes conclues en médiation
+- intent: divorce
+  examples: |
+    - Quelles sont les procédures pour divorcer?
+    - conseils de parents en fin de mariage
+    - Comment communiquer avec son ex mari ?
+    - Comment organiser une séparation avec son mari?
+- intent: domicile_biens_argent
+  examples: |
+    - Récupérer ses meubles et effets personnels laissés dans le domicile
+- intent: domicile
+  examples: |
+    - Que peut-on emporter lorsqu’on quitte le domicile familial ?
+- intent: biens_et_argent
+  examples: |
+    - Récupérer ses meubles et effets personnels
+- intent: maintien_du_niveau_de_vie
+  examples: |
+    - La gestion du REEE de votre enfant à la séparation
+    - Comptes conjoints : quels sont vos droits en cas de séparation ?
+- intent: garde
+  examples: |
+    - Comment un père peut avoir la garde de sa fille ?
+    - Pour la garde de l'enfant comment choisir son calendrier parental
+    - Qui a la garde en cas de séparation ?
+    - Quand la garde n'est pas respectée
+    - Qui décide de la garde des enfants ?
+- intent: sante_education_religion_voyage
+  examples: |
+    - Quelle éducation religieuse pour son enfants
+    - Décision sur la santé et l'éducation des enfants
+- intent: pension_alimentaire
+  examples: |
+    - Quelle est le montant moyen d'une pension alimentaire?
+    - La pension est trop élevée
+    - J'ai perdu mon revenu, comment payer la pension?
+    - Je veux négocier le montant de la pension
+- intent: greet
+  examples: |
+    - Hello
+    - Allo
+- intent: aurevoir
+  examples: |
+    - bonne journée
+- intent: affirm
+  examples: |
+    - ok
+    - cool
+    - c'est correct
+- intent: deny
+  examples: |
+    - impossible
+    - no
+- intent: homepage
+  examples: |
+    - Pouvez vous m'aider ?
+- intent: out_of_scope
+  examples: |
+    - oiuoiuqwoiueq
+- intent: soquij
+  examples: |
+    - Comment est organisé la SOQUIJ ?
+- intent: stress
+  examples: |
+    - Je n'arrives pas a me détendre
+- synonym: sans
+  examples: |
+    - sans avocat
+    - seul
+- synonym: maries
+  examples: |
+    - mariés
+    - conjoint de fait
+- synonym: conjoitns
+  examples: |
+    - conjoints

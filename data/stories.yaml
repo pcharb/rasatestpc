@@ -1,0 +1,215 @@
+version: "2.0"
+stories:
+
+- story: stressé
+  steps:
+    - intent: stress
+    - action: utter_get_started
+    - intent: affirm
+    - action: action_set_music_preference
+    - slot_was_set:
+        - likes_music: True
+    - action: utter_awesome
+
+- story: Non stressé
+  steps:
+    - intent: stress
+    - action: utter_get_started
+    - intent: deny
+    - action: action_set_music_preference
+    - slot_was_set:
+        - likes_music: False
+    - action: utter_aurevoir
+
+
+- story: notaire form interjection
+  steps:
+  - intent: notaire
+  - action: notaire_form
+  - active_loop: notaire_form
+  - slot_was_set:
+    - requested_slot: notaire
+  - intent: explication_notaire_form
+  - action: utter_explication_notaire_form
+  - action: notaire_form
+
+- story: ville form contextual interjection
+  steps:
+  - intent: notaire
+  - action: notaire_form
+  - active_loop: notaire_form
+  - slot_was_set:
+    - requested_slot: ville
+  - intent: explication_notaire_form
+  - action: utter_explication_notaire_form
+  - action: notaire_form
+
+- story: locataires form contextal interjection
+  steps:
+  - intent: notaire
+  - action: notaire_form
+  - active_loop: notaire_form
+  - slot_was_set:
+    - requested_slot: locataires
+  - intent: explication_notaire_form
+  - action: utter_explication_notaire_form
+  - action: notaire_form
+
+#################      TRIBUNAL       #################
+- story: demande tribunal
+  steps:
+  - intent: tribunal
+  - action: utter_tribunal
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande tribunal
+  steps:
+  - intent: tribunal
+  - action: utter_tribunal
+
+- story: demande tribunal agir avec un avocat a la cour
+  steps:
+  - intent: avec_ou_sans_avocat_a_la_cour
+    entities:
+       - avocat: avec
+  - action: utter_avec_un_avocat_a_la_cour
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande tribunal agir sans un avocat a la cour
+  steps:
+  - intent: avec_ou_sans_avocat_a_la_cour
+    entities:
+       - avocat: sans
+  - action: utter_sans_un_avocat_a_la_cour
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande tribunal procedures judiciaires conjoitns
+  steps:
+  - intent: procedures_judiciaires
+    entities:
+      - relation: conjoints
+  - action: utter_procedures_judiciaires_conjoints
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande tribunal procedures judiciaires maries
+  steps:
+  - intent: procedures_judiciaires
+    entities:
+      - relation: maries
+  - action: utter_procedures_judiciaires_maries
+  - intent: affirm
+  - action: utter_aurevoir
+##########################################################
+
+#################      MEDIATION       #################
+- story: demande mediation
+  steps:
+  - intent: mediation
+  - action: utter_mediation
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande mediation
+  steps:
+  - intent: mediation
+  - action: utter_mediation
+
+#################      DIVORCE       #################
+- story: demande divorce
+  steps:
+  - intent: divorce
+  - action: utter_divorce
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande divorce
+  steps:
+  - intent: divorce
+  - action: utter_divorce
+
+#################      DOMICILE, BIENS ET ARGENT       #################
+- story: demande domicile, biens et argent
+  steps:
+  - intent: domicile_biens_argent
+  - action: utter_domicile_biens_argent
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande domicile
+  steps:
+  - intent: domicile
+  - action: utter_domicile
+
+- story: demande biens et argent
+  steps:
+  - intent: biens_et_argent
+  - action: utter_biens_et_argent
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande de maitien du niveau de vie
+  steps:
+  - intent: maintien_du_niveau_de_vie
+  - action: utter_maintien_du_niveau_de_vie
+  - intent: affirm
+  - action: utter_aurevoir
+
+#################      ENFANTS      #################
+- story: enfants
+  steps:
+  - intent: enfants
+  - action: utter_enfants
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande garde
+  steps:
+  - intent: garde
+  - action: utter_garde
+
+- story: demande sante education religion et voyage
+  steps:
+  - intent: sante_education_religion_voyage
+  - action: utter_sante_education_religion_voyage
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande sante education religion voyage
+  steps:
+  - intent: sante_education_religion_voyage
+  - action: utter_sante_education_religion_voyage
+
+- story: demande de pension alimentaire
+  steps:
+  - intent: pension_alimentaire
+  - action: utter_pension_alimentaire
+  - intent: affirm
+  - action: utter_aurevoir
+
+- story: demande pension alimentaire
+  steps:
+  - intent: pension_alimentaire
+  - action: utter_pension_alimentaire
+
+#################      AUTRES      #################
+- story: aurevoir
+  steps:
+  - intent: aurevoir
+  - action: utter_aurevoir
+
+
+- story: homepage
+  steps:
+  - intent: homepage
+  - action: utter_homepage
+  - intent: aurevoir
+  - action: utter_aurevoir
+
+- story: soquij
+  steps:
+  - intent: soquij
+  - action: utter_soquij

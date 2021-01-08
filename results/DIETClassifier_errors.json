@@ -1,0 +1,115 @@
+[
+  {
+    "text": "Comment s'entendre sans avoir recours aux tribunaux ?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "avocat",
+        "start": 19,
+        "end": 23,
+        "confidence_entity": 0.7120916843414307,
+        "value": "sans",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "qu\u2019est-ce que \u00e7a implique d'agir seul sans avocat ?",
+    "entities": [
+      {
+        "start": 38,
+        "end": 49,
+        "value": "sans",
+        "entity": "avocat"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "avocat",
+        "start": 33,
+        "end": 37,
+        "confidence_entity": 0.7270029187202454,
+        "value": "sans",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "avocat",
+        "start": 38,
+        "end": 49,
+        "confidence_entity": 0.8719812631607056,
+        "value": "sans",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Quelles sont les proc\u00e9dures judiciaires pour conjoint de fait?",
+    "entities": [
+      {
+        "start": 45,
+        "end": 61,
+        "value": "maries",
+        "entity": "relation"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "relation",
+        "start": 45,
+        "end": 53,
+        "confidence_entity": 0.7398921847343445,
+        "value": "conjoint",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "relation",
+        "start": 57,
+        "end": 61,
+        "confidence_entity": 0.6959584355354309,
+        "value": "fait",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Qui garde le condo ou l'appartement ?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 18,
+        "value": "condo",
+        "entity": "immobilier"
+      },
+      {
+        "start": 22,
+        "end": 35,
+        "value": "l'appartement",
+        "entity": "immobilier"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "immobilier",
+        "start": 13,
+        "end": 18,
+        "confidence_entity": 0.45766037702560425,
+        "value": "condo",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "immobilier",
+        "start": 24,
+        "end": 35,
+        "confidence_entity": 0.7567806839942932,
+        "value": "appartement",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

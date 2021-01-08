@@ -1,0 +1,62 @@
+language: fr  # your two-letter language code
+pipeline:
+   - name: WhitespaceTokenizer
+   - name: RegexFeaturizer # Fo intent classifier & entity extractor -> Sparse Featurizer, case sensitive
+   - name: LexicalSyntacticFeaturizer # Entity Extraction
+#   - name: CRFEntityExtractor
+   - name: CountVectorsFeaturizer # Sparse featurizer - BOW
+#     OOV_token: "_oov_"
+   - name: CountVectorsFeaturizer # Sparse featurizer (characters) - For Misspellings
+     analyzer: char_wb
+     min_ngram: 1
+     max_ngram: 4
+   - name: DIETClassifier
+     epochs: 100
+   - name: EntitySynonymMapper
+   - name: ResponseSelector # FAQ retrieval model // Predict a response from a set of candidate responses.
+     epochs: 100
+     retrieval_intent: faq
+   - name: ResponseSelector # Chitchat retrieval model // Predict a response from a set of candidate responses.
+     epochs: 100
+     retrieval_intent: chitchat
+   - name: FallbackClassifier
+     threshold: 0.5
+
+
+pipeline:
+   - name: WhitespaceTokenizer
+     alias: "white-tokenizer"
+   - name: RegexFeaturizer # Fo intent classifier & entity extractor -> Sparse Featurizer, case sensitive
+     alias: "regex"
+   - name: LexicalSyntacticFeaturizer # Entity Extraction
+     alias: "lexical-syntactic"
+   - name: CountVectorsFeaturizer # Sparse featurizer - BOW
+     alias: "cvf-word"
+#     OOV_token: "_oov_"
+   - name: CountVectorsFeaturizer # Sparse featurizer (characters) - For Misspellings
+     alias: "cvf-char"
+     analyzer: char_wb
+     min_ngram: 1
+     max_ngram: 4
+   - name: DIETClassifier
+     epochs: 100
+   - name: EntitySynonymMapper
+   - name: ResponseSelector # FAQ retrieval model // Predict a response from a set of candidate responses.
+     epochs: 100
+     retrieval_intent: faq
+   - name: ResponseSelector # Chitchat retrieval model // Predict a response from a set of candidate responses.
+     featurizers: ["white-tokenizer", "cvf-word"]
+     epochs: 100
+     retrieval_intent: chitchat
+   - name: FallbackClassifier
+     threshold: 0.5
+
+policies:
+  - name: TEDPolicy # Features: user input (intent and entities), previous system actions, slots and active forms
+    max_history: 5
+    epochs: 100
+    tensorboard_log_directory: 'tensorboard' # tensorboard --logdir tensorboard
+  - name: RulePolicy # For FAQ & Chitchat
+    core_fallback_threshold: 0.5
+    core_fallback_action_name: "action_default_fallback"
+    enable_fallback_prediction: True

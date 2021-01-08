@@ -1,0 +1,130 @@
+[
+  {
+    "text": "Sur quel num\u00e9ro je peux contacter juridiQC",
+    "intent": "faq",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Comment avoir plus d'informations",
+    "intent": "faq",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "C'est quoi le but du site internet",
+    "intent": "faq",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Comment prot\u00e9ger les citoyens",
+    "intent": "faq",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Comment fonctionne un tribunal ?",
+    "intent": "tribunal",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Comment s'entendre sans avoir recours aux tribunaux ?",
+    "intent": "tribunal",
+    "intent_prediction": {
+      "name": "mediation",
+      "confidence": 0.4784117639064789
+    }
+  },
+  {
+    "text": "usage du domicile familial",
+    "intent": "domicile_biens_argent",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "partage des biens et des dettes",
+    "intent": "domicile_biens_argent",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Que peut-on emporter lorsqu\u2019on quitte le domicile familial ?",
+    "intent": "domicile",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Usage du domicile familial ?",
+    "intent": "domicile",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Qui peut rester dans le domicile familial ?",
+    "intent": "domicile",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Partage des biens et des dettes",
+    "intent": "biens_et_argent",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "non merci",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6851843595504761
+    }
+  },
+  {
+    "text": "NON Merci",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6875839829444885
+    }
+  },
+  {
+    "text": "Avez-vous des conseils \u00e0 me donner pour mon probl\u00e8me ?",
+    "intent": "homepage",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Quels sont les solutions que vous avez pour moi ?",
+    "intent": "homepage",
+    "intent_prediction": {
+      "name": "nlu_fallback",
+      "confidence": 1.0
+    }
+  }
+]

@@ -1,0 +1,284 @@
+version: "2.0"
+nlu:
+- intent: chitchat/jesuisunrobot
+  examples: |
+    - Est ce que vous êtes un robot?
+    - Êtes vous un robot?
+    - Êtes vous humain?
+    - Est-ce que je parle avec un humain?
+    - Est-ce que je parle avec un robot?
+    - C'est quoi ton nom ?
+    - Comment on dit t'appeler?
+    - Est-ce que t'as un nom ?
+- intent: chitchat/meteo
+  examples: |
+    - Quel temps fait-il dehors ?
+    - Quelle température fait il aujourd'hui ?
+    - Quelles sont les prévisions pour demain ?
+    - Quelles sont les prévisions pour la semaine prochaine ?
+    - Quelle est la météo pour cette semaine ?
+    - C'est quoi la météo ?
+    - météo d'aujourd'hui
+- intent: chitchat/blague
+  examples: |
+    - Raconte moi une joke
+    - Dis moi une blague
+    - Est-ce que tu peux me raconter une blague ?
+- intent: faq/contact
+  examples: |
+    - Sur quel numéro je peux contacter juridiQC
+    - Comment avoir plus d'informations
+    - Contacter quelqu'un
+    - un numéro de téléphone
+    - Trouver un courriel de contact
+    - Service clientèle
+- intent: faq/autre
+  examples: |
+    - C'est quoi le but du site internet
+    - Comment protéger les citoyens
+- intent: explication_notaire_form
+  examples: |
+    - Peux tu m,expliquer pourquoi tu me demandes ?
+    - Peux tu m'en dire plus ?
+    - Explique moi
+    - Je veux avoir plus d'informations
+    - Je voudrais savoir pourquoi
+    - pourquoi ?
+    - Pourquoi tu me demandes ca
+    - Pourquoi c'est nécessaire
+    - Donne moi plus de détails
+    - Qu,est ce que cela veut dire ?
+    - pourquoi
+- intent: tribunal
+  examples: |
+    - Comment fonctionne un tribunal ?
+    - Comment s'entendre sans avoir recours aux tribunaux ?
+- intent: fonctionnement_de_la_cour
+  examples: |
+    - Comment se déroule l'audience ?
+    - Aperçu d'une salle d'audience
+    - Tout savoir sur le langage juridique du juge
+    - Comment fontionne la cour de justice au Québec ?
+    - Faire reconnaître une décision rendue à l'extérieur du Québec
+- intent: avec_ou_sans_avocat_a_la_cour
+  examples: |
+    - qu’est-ce que ça implique d'agir seul [sans avocat]{"entity": "avocat", "value": "sans"} ?
+    - Les procédures judiciaires, combien ça coûte ?
+    - Se rendre à la Cour pour présenter une demande à un juge
+    - Se préparer pour l'audience
+    - Comment l’avocat facture-t-il ses services ?
+    - Préparer le protocole de l'instance
+    - Quelles sont les clés pour bien choisir son avocat?
+    - Fixer une date pour se présenter devant un juge
+    - Obtenir un jugement quand son ex ne se présente pas à la Cour
+    - Comment on agir seule [sans avocat]{"entity": "avocat", "value": "sans"}?
+    - Entamer [seul]{"entity": "avocat", "value": "sans"} une procédure de modification d’une pension alimentaire ou de garde d’enfant
+- intent: procedures_judiciares
+  examples: |
+    - Quelles sont les étapes pour entamer une procédure judiciaire?
+    - Informations sur les procédures judiciares pour couple [mariés]{"entity": "relation", "value": "maries"}
+    - Informations sur les procédures judiciares pour [conjoints]{"entity": "relation", "value": "conjoitns"}
+    - Comment être représenté par un avocat?
+    - Quelles sont les procédures judiciaires pour [conjoint de fait]{"entity": "relation", "value": "maries"}?
+- intent: mediation
+  examples: |
+    - Pourquoi aller en médiation ?
+    - Se préparer pour la médiation
+    - Inviter son ex à aller en médiation
+    - Le déroulement de la médiation familiale
+    - La médiation, combien ça coûte ?
+    - Officialiser les ententes conclues en médiation
+    - Définition et le but de la médiation
+    - S'entendre à l'amiable avec son conjoint
+    - Est-ce qu'on doit être en chicane pour aller voir un médiateur familial ?
+    - Des conseils pour aborder la médiatiom
+
+- intent: divorce
+  examples: |
+    - Quelles sont les procédures pour divorcer?
+    - Quelles sont les étapes pour divorcer?
+    - Comment se construire après une séparation?
+    - Comment communiquer avec son ex mari ?
+    - Comment organiser une séparation avec son mari?
+    - conseils de parents en fin de mariage
+    - Élaboration d'un plan parental lors d'une séparation
+    - Principales étapes juridiques d’un divorce
+    - Je veux divocer
+    - Comment divorcer
+    - J'envisage de divorcer
+    - Principales étapes d’une séparation entre conjoints de fait
+
+- intent: notaire
+  examples: |
+    - Je cherche un notaire
+    - Comment trouver un notaire
+    - J'ai besoin d'un notaire
+    - Où trouver un notaire à [montréal](ville) ?
+    - Comment chercher un notaire à [laval](ville) ou à [longueuil](ville) ?
+    - Trouver un notare à [québec](ville)
+    - J'ai un [condo](immobiler) à Montréal
+
+- intent: domicile_biens_argent
+  examples: |
+    - usage du domicile familial
+    - partage des biens et des dettes
+    - Récupérer ses meubles et effets personnels laissés dans le domicile
+- intent: domicile
+  examples: |
+    - Que peut-on emporter lorsqu’on quitte le domicile familial ?
+    - Usage du domicile familial ?
+    - Qui peut rester dans le domicile familial ?
+- intent: biens_et_argent
+  examples: |
+    - Hypothèque, frais d’entretien, assurance : les dépenses liées à la maison à la séparation
+    - Partage des biens et des dettes
+    - Récupérer ses meubles et effets personnels
+    - Comment séparer les biens lors d'une séparation ?
+- intent: maintien_du_niveau_de_vie
+  examples: |
+    - Cartes de crédit communes : quels sont vos droits en cas de séparation ?
+    - Comptes conjoints : quels sont vos droits en cas de séparation ?
+    - Marges de crédit communes : quels sont vos droits en cas de séparation ?
+    - Couples mariés : répartir l'argent et les biens
+    - Conjoints de fait : répartir les biens à la séparation
+    - Partager les régimes et les placements de retraite
+    - La gestion du REEE de votre enfant à la séparation
+- intent: garde
+  examples: |
+    - Quel mode de garde pour l'enfant
+    - Quand un parent ne peut pas s'occuper seul de son enfant
+    - L'impact d'un dossier avec le DPJ sur la garde
+    - Partage de la garde des enfants
+    - Quand la garde n'est pas respectée
+    - Gestion et logistique de la garde
+    - Combien de temps l'enfant passera avec chacun de ses parents
+    - Pour la garde de l'enfant comment choisir son calendrier parental
+    - Quand l’enfant habite en alternance chez ses deux parents
+    - Comment s'organiser pour la garde partagée des enfants
+    - Gardes des enfants déterminée par un juge
+    - 1 semaine sur 2 garde des enfants
+    - Quand l’enfant habite seulement chez l’un des deux parents
+    - Qui décide de la garde des enfants ?
+    - Comment enlever la garde d'un père ?
+    - Comment enlever la garde d'une mère ?
+    - Comment un père peut avoir la garde de sa fille ?
+    - Comment un père peut avoir la garde de son fils ?
+    - Comment faire pour enlever l'autorité parentale du père ?
+    - Comment faire pour que le père soit déchu de ses droits parentaux ?
+    - Qui a la garde en cas de séparation ?
+    - Qui s'occupe des enfants ?
+- intent: sante_education_religion_voyage
+  examples: |
+    - Pour la santé de l’enfant qui doit décider ?
+    - Pour l'éducation et religion de l’enfant qui doit décider ?
+    - Pour les personnes que l'enfant peut fréquenter qui doit décider ?
+    - Voyager avec l’enfant lors d'une séparation
+    - Quand un parent déménage pour l'éducation de l'enfant
+    - Quand un parent perd le droit de prendre des décisions concernant son enfant et son éducation
+    - Décision sur la santé et l'éducation des enfants
+    - Quelle éducation religieuse pour son enfants
+    - Comment les enfants vivent la séparation ?
+- intent: pension_alimentaire
+  examples: |
+    - À quoi sert la pension alimentaire pour enfant ?
+    - Qui peut demander la pension alimentaire et comment s’y prendre ?
+    - Demander une pension alimentaire rétroactive
+    - Calculer la pension alimentaire
+    - Comment établir le revenu des parents pour calculer la pension alimentaire pour enfant ?
+    - Calculer la pension alimentaire pour un enfant majeur
+    - Contester le calcul de la pension alimentaire pour enfant
+    - Comment Revenu Québec assure le versement de la pension alimentaire pour enfant ?
+    - Information pour le parent qui reçoit la pension alimentaire pour enfant
+    - Recevoir une pension alimentaire pour enfant quand son ex vit à l’extérieur du Québec
+    - Je n'ai pas d'argent pour la pension alimentaire
+    - Je ne veux pas payer la pension alimentaire
+    - La pension est trop élevée
+    - Je veux négocier le montant de la pension
+    - Comment payer la pension?
+    - J'ai perdu mon revenu, comment payer la pension?
+    - Je suis en arrêt de travail, peut-on reporter le montant de la pension?
+    - Montant fixe pour la pension
+    - Payer un montant une fois
+    - Quelle est le montant moyen d'une pension alimentaire?
+- intent: greet
+  examples: |
+    - hey
+    - allo
+    - bonjour
+    - salut
+    - bonsoir
+    - hi
+    - Hi
+    - Hello
+    - Hallo
+    - Allo
+- intent: aurevoir
+  examples: |
+    - bonne journée
+    - à bientôt
+    - bonne soirée
+    - à la prochaine
+    - au revoir
+- intent: affirm
+  examples: |
+    - oui
+    - bien sûr
+    - en effet
+    - bien entendu
+    - c'est correct
+    - ok
+    - c'est noté
+    - merci
+    - parfait
+    - génial
+    - cool
+    - pourquoi pas
+    - yes
+
+- intent: deny
+  examples: |
+    - non
+    - jamais
+    - je ne pense pas
+    - je ne crois pas
+    - impossible
+    - no
+
+- intent: homepage
+  examples: |
+    - Pouvez vous m'aider ?
+    - Avez-vous des conseils à me donner pour mon problème ?
+    - A quoi servez-vous ?
+    - Quels sont les solutions que vous avez pour moi ?
+- intent: out_of_scope
+  examples: |
+    - 415152662727672727
+    - hjshshjsadhdakjhkjhskdjhaskjhda
+    - oiuoiuqwoiueq
+    - hshsjsksjsksksksksksks
+    - 8767yguhde73
+- intent: soquij
+  examples: |
+    - C'est quoi la soquij ?
+    - C'est qui la SOQUIJ
+    - Comment est organisé la SOQUIJ ?
+    - pourquoi SOQUIJ
+
+- intent: stress
+  examples: |
+    - Je suis stressé
+    - je stress quotidiennement
+    - Je n'arrives pas a me détendre
+    - Je stress souvent
+
+- synonym: sans
+  examples: |
+    - sans avocat
+    - seul
+- synonym: maries
+  examples: |
+    - mariés
+    - conjoint de fait
+- synonym: conjoitns
+  examples: |
+    - conjoints

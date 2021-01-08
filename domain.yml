@@ -1,0 +1,233 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- aurevoir
+- affirm
+- deny
+- jesuisunrobot
+- homepage
+- domicile_biens_argent
+- enfants
+- divorce
+- tribunal
+- meteo
+- blague
+- fonctionnement_de_la_cour
+- avec_ou_sans_avocat_a_la_cour
+- procedures_judiciares
+- mediation
+- domicile
+- biens_et_argent
+- maintien_du_niveau_de_vie
+- garde
+- sante_education_religion_voyage
+- pension_alimentaire
+- thankyou
+- nlu_fallback
+- procedures_judiciaires
+- goodbye
+- bot_challenge
+- chitchat
+- faq
+- soquij
+- out_of_scope
+- explication_notaire_form
+- stress
+- utter_get_started
+- notaire
+entities:
+- relation
+- avocat
+- domicile
+- ville
+- immobiler
+slots:
+  avocat:
+    type: categorical
+    influence_conversation: true
+    values:
+    - sans
+    - avec
+  domicile:
+    type: categorical
+    influence_conversation: true
+    values:
+    - proprietaires
+    - locataires
+  likes_music:
+    type: bool
+    influence_conversation: true
+  locataires:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  notaire:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  relation:
+    type: categorical
+    influence_conversation: true
+    values:
+    - maries
+    - conjoints
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false
+  ville:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+responses:
+  utter_tribunal:
+  - text: Merci pour votre question. Vous pouvez trouver des informations sur les
+      tribunaux [ici](https://juridiqc.gouv.qc.ca/separation-et-divorce/tribunal/)
+  utter_fonctionnement_de_la_cour:
+  - text: Voilà comment fonctionne la cour de justice !
+  utter_sans_un_avocat_a_la_cour:
+  - text: Merci vous voulez agir tout seul à la Cour. Bon courage !
+  utter_avec_un_avocat_a_la_cour:
+  - text: Merci vous voulez trouver un avocat. C'est mieux !
+  utter_procedures_judiciaires_maries:
+  - text: Merci pour votre question cooncernant les procedures judiciares des mariés
+  utter_procedures_judiciaires_conjoints:
+  - text: Merci pour votre question cooncernant les procedures judiciares des conjoints
+  utter_mediation:
+  - text: Merci pour votre question. Vous pouvez trouver des informations sur les
+      tribunaux [ici](https://juridiqc.gouv.qc.ca/separation-et-divorce/mediation/)
+  utter_divorce:
+  - text: Merci pour votre question. Vous pouvez trouver des informations pour une
+      demande de divorce [en cliquant ici](https://juridiqc.gouv.qc.ca/en/separation-and-divorce/)
+  utter_domicile:
+  - text: Vous pouvez trouver des informations concernant les question d'usage du
+      [domicile et les meubles ici](https://juridiqc.gouv.qc.ca/separation-et-divorce/domicile-biens-argent/domicile/)
+  utter_biens_et_argent:
+  - text: Vous pouvez trouver des informations concernant les questions des [biens
+      et les finances ici](https://juridiqc.gouv.qc.ca/separation-et-divorce/domicile-biens-argent/biens-et-argent/)
+  utter_maintien_du_niveau_de_vie:
+  - text: Vous pouvez trouver des informations concernant les questions du [maintien
+      du niveau de vie ici](https://juridiqc.gouv.qc.ca/separation-et-divorce/domicile-biens-argent/maintien-du-niveau-de-vie/)
+  utter_garde:
+  - text: Vous pouvez trouver des informations concernant la Garde des enfants en
+      cliquant [ici](https://juridiqc.gouv.qc.ca/separation-et-divorce/enfants/garde/garde-de-l-enfant-choisir-son-calendrier-parental/)
+  utter_sante_education_religion_voyage:
+  - text: Information sur la santé, éducation, réligion et voyages
+  utter_pension_alimentaire:
+  - text: Vous pouvez trouver des informations sur la pension alimentaire en cliquant
+      [ici](https://juridiqc.gouv.qc.ca/separation-et-divorce/enfants/pension-alimentaire/information-pour-le-parent-qui-recoit-la-pension-alimentaire-pour-enfant/)
+  utter_greet:
+  - text: Allo!, comment je peux vous aider ?
+  utter_bienvenue:
+  - text: Allo! Je suis le super chatbot de la [SOQUIJ](https://soquij.qc.ca/) ! :)
+      Comment je peux vous aider aujourd'hui ?
+  utter_aurevoir:
+  - text: À bientôt
+  utter_chitchat/jesuisunrobot:
+  - text: Je suis l'agent conversationnel de JuridiQC. Je suis un robot développé
+      par la [SOQUIJ](https://soquij.qc.ca/)
+  utter_chitchat/meteo:
+  - text: Vous pouvez trouver les prévisions [en cliquant ici](https://www.google.com/search?q=google+meteo+montreal)
+  utter_chitchat/blague:
+  - text: J'ai une blague sur les magasins mais elle a pas supermarché
+  utter_faq/contact:
+  - text: Je peux vous mettre en relation avec quelqu'un
+  - text: Vous pouvez contacter la SOQUIJ par téléphone au 514 842-8745 (de 8 h 30
+      à 12 h 00 et de 13 h 00 à 16 h 30)
+  utter_faq/autre:
+  - text: le but c'est vous donner l'information dont vous avez besoin
+  utter_soquij:
+  - text: SOQUIJ relève du ministre de la Justice du Québec et elle assure son autofinancement
+      par la vente de ses produits et services. Vous trouverez plus d'informations
+      [en cliquant ici](https://soquij.qc.ca/fr/a-propos)
+  utter_out_of_scope:
+  - buttons:
+    - payload: /tribunal
+      title: Tribunaux
+    - payload: /enfants
+      title: Enfants
+    - payload: /divorce
+      title: Divorce
+    - payload: /mediation
+      title: Médiation
+    - payload: /domicile
+      title: Domicile, biens et argent
+    text: Désolé, je ne suis pas sur d'avoir compris. Vous voulez avoir plus d'information
+      concernant quel sujet ?
+  utter_domicile_biens_argent:
+  - buttons:
+    - payload: /domicile
+      title: Domicile
+    - payload: /biens_et_argent
+      title: Biens et argent
+    - payload: /maintien_du_niveau_de_vie
+      title: Maintien du niveau de vie
+    text: Merci pour votre question. Vous pouvez trouver des informations concernant
+      votre demande [en cliquant ici](https://juridiqc.gouv.qc.ca/separation-et-divorce/domicile-biens-argent/domicile-familial/)
+  utter_enfants:
+  - buttons:
+    - payload: /garde
+      title: Garde
+    - payload: /sante_education_religion_voyage
+      title: Santé, éducation, réligion et voyages
+    - payload: /pension_alimentaire
+      title: Pension Alimentaire
+    text: Merci pour votre question. Vous pouvez trouver des informations concernat
+      les enfants [en cliquant ici](https://juridiqc.gouv.qc.ca/separation-et-divorce/enfants/)
+  utter_homepage:
+  - buttons:
+    - payload: /divorce
+      title: Divorce
+    - payload: /garde
+      title: Garde des enfants
+    - payload: /biens_et_argent
+      title: Partage des biens
+    text: Avez-vous des questions concernant les procédures pour un divorce, la garde
+      de vos enfants ou le partage desa biens ?
+  utter_ask_notaire:
+  - text: Voulez-vous entammer une procédure de divorce ?
+  utter_ask_ville:
+  - text: Quel genre de domicile avait vous ?
+  utter_ask_locataires:
+  - text: Êtes-vous locataires du domicile ?
+  utter_submit:
+  - text: Parfait !
+  utter_slots_values:
+  - text: "Je confirme que vous êtes actuellement:\n - notaire ?: {notaire}\n - locataire\
+      \ ? : {locataires}\n - genre de domicile : {ville}"
+  utter_please_rephrase:
+  - text: Je suis désolé, je ne pense pas avoir compris. Pouvez vous reformuler (Low
+      NLU confidence) ?
+  utter_default:
+  - text: Je suis désolé, je ne pense pas avoir compris. Pouvez vous reformuler (Low
+      Core confidence)?
+  utter_explication_notaire_form:
+  - text: Nous voulons vous assiter le mieux possible. C'est la raison pour laquelle
+      je me permets de vous poser ces questions.
+  utter_get_started:
+  - text: Je peux vous aider à vous détendre. Aimez vous la musique ?
+  utter_awesome:
+  - text: Génial. Je peux vous proposer d'écouter [cette chanson](https://www.youtube.com/watch?v=IPb60Xi8TG0&t=120s)
+      :) !!
+actions:
+- action_set_music_preference
+forms:
+  notaire_form:
+    locataires:
+    - intent: affirm
+      type: from_intent
+      value: true
+    - intent: deny
+      type: from_intent
+      value: false
+    notaire:
+    - intent: affirm
+      type: from_intent
+      value: true
+    - intent: deny
+      type: from_intent
+      value: false
+    ville:
+    - entity: ville
+      type: from_entity

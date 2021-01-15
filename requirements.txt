@@ -84,9 +84,9 @@ python-telegram-bot==12.8
 pytz==2020.4
 PyYAML==5.3.1
 questionary==1.5.2
-rasa==2.0.2
-rasa-sdk==2.0.2
-rasa-x==0.33.2
+rasa==2.2.0
+rasa-sdk==2.2.0
+rasa-x==0.35.0
 redis==3.5.3
 regex==2020.9.27
 requests==2.24.0

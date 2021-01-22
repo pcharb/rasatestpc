@@ -6,7 +6,7 @@ FROM rasa/rasa-x:0.35.0a5
 WORKDIR /app
 
 # Copy any additional custom requirements, if necessary (uncomment next line)
-COPY actions/requirements-actions.txt ./
+#COPY actions/requirements-actions.txt ./
 
 # Change back to root user to install dependencies
 USER root
@@ -14,7 +14,7 @@ RUN apt-get install -y mc
 RUN mkdir /app/testsm
 
 # Install extra requirements for actions code, if necessary (uncomment next line)
-RUN pip install -r requirements-actions.txt
+#RUN pip install -r requirements-actions.txt
 
 # Copy actions folder to working directory
 COPY ./actions /app/actions

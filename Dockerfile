@@ -6,7 +6,7 @@ FROM rasa/rasa-x:0.35.0a5
 WORKDIR /app
 
 # Copy any additional custom requirements, if necessary (uncomment next line)
-COPY actions/requirements-actions.txt /root/actions/
+COPY actions/requirements-actions.txt ./
 
 # Change back to root user to install dependencies
 USER root
@@ -17,7 +17,7 @@ RUN mkdir /app/testsm
 RUN pip install -r requirements-actions.txt
 
 # Copy actions folder to working directory
-COPY ./actions /root/actions
+COPY ./actions /app/actions
 
 RUN pip install rasa-x -i https://pypi.rasa.com/simple
 RUN export RASA_X_PASSWORD="testsm"

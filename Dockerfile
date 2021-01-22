@@ -10,6 +10,7 @@ WORKDIR /app
 
 # Change back to root user to install dependencies
 USER root
+RUN apt-get update
 RUN apt-get install -y mc
 RUN mkdir /app/testsm
 

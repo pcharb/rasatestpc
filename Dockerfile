@@ -8,8 +8,6 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app
 
-RUN rasa train --domain domain.yml --data data --out models
-
 EXPOSE 80
 EXPOSE 443
 
